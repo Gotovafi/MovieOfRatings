@@ -8,6 +8,23 @@ namespace MovieOfRatings
 {
     public class Menu
     {
+
+        public int FindNrReviewsByReviewer(int name)
+        {
+            List<Review> x1 = new List<Review>();
+            int numberOfReviews = 0;
+
+            x1.ForEach(delegate (Review review)
+            {
+                if (review.Reviewer == name)
+                {
+                    numberOfReviews++;
+                }
+            });
+
+            return numberOfReviews;
+        }
+
         public double FindAveScoreByReviewer(int name)
         {
             List<Review> x1 = new List<Review>();
@@ -27,5 +44,5 @@ namespace MovieOfRatings
             aveScore = totalScore / numberOfScores;
             return aveScore;
         }
-        }
+    }
 }
