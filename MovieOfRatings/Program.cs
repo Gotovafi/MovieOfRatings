@@ -11,11 +11,10 @@ namespace MovieOfRatings
     class Program
     {
         private static List<Review> _ratingCollection;
-        private static string _path;
+        private static string _path = @"D:\Ratings\ratings.json";
 
         static void Main(string[] args)
         {
-                           
                     using (StreamReader streamReader = File.OpenText(_path))
                     using (JsonTextReader reader = new JsonTextReader(streamReader))
                     {
@@ -33,8 +32,7 @@ namespace MovieOfRatings
 
                         }
                         _ratingCollection = ratingList;
-                    }
-                           
+                    }         
         }
     }
 }
