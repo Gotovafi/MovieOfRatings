@@ -32,7 +32,15 @@ namespace MovieOfRatings
 
                         }
                         _ratingCollection = ratingList;
-                    }         
+                    }
+            using (StreamReader sr = File.OpenText(_path))
+            {
+                string s = "";
+                while ((s = sr.ReadLine()) != null)
+                {
+                    Console.WriteLine(s);
+                }
+            }
         }
     }
 }
