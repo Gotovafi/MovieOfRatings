@@ -25,24 +25,100 @@ namespace MovieOfRatings
             return numberOfReviews;
         }
 
-        public double FindAveScoreByReviewer(int name)
+        public double FindAveGradeByReviewer(int name)
         {
             List<Review> x1 = new List<Review>();
-            int numberOfScores = 0;
-            int totalScore = 0;
-            double aveScore;
+            int numberOfGrade = 0;
+            int totalGrade = 0;
+            double aveGrade;
 
             x1.ForEach(delegate (Review review)
             {
                 if (review.Reviewer == name)
                 {
-                    numberOfScores++;
-                    totalScore = totalScore + review.Grade;
+                    numberOfGrade++;
+                    totalGrade = totalGrade + review.Grade;
                 }
             });
 
-            aveScore = totalScore / numberOfScores;
-            return aveScore;
+            aveGrade = totalGrade / numberOfGrade;
+            return aveGrade;
         }
+
+        public int FindNrGradesByReviewer(int name, int grade)
+        {
+            List<Review> x1 = new List<Review>();
+            int numberOfGrades = 0;
+
+            x1.ForEach(delegate (Review review)
+            {
+                if (review.Reviewer == name)
+                {
+                    if (review.Grade == grade)
+                    {
+                        numberOfGrades++;
+                    }
+                }
+            });
+
+            return numberOfGrades;
+        }
+
+        public int FindNrReviewsOfMovie(int name)
+        {
+            List<Review> x1 = new List<Review>();
+            int numberOfReviews = 0;
+
+            x1.ForEach(delegate (Review review)
+            {
+                if (review.Movie == name)
+                {
+                    numberOfReviews++;
+                }
+            });
+
+            return numberOfReviews;
+        }
+
+        public double FindAveGradeOfMovie(int name)
+        {
+            List<Review> x1 = new List<Review>();
+            int numberOfGrade = 0;
+            int totalGrade = 0;
+            double aveGrade;
+
+            x1.ForEach(delegate (Review review)
+            {
+                if (review.Movie == name)
+                {
+                    numberOfGrade++;
+                    totalGrade = totalGrade + review.Grade;
+                }
+            });
+
+            aveGrade = totalGrade / numberOfGrade;
+            return aveGrade;
+        }
+
+        public int FindNrGradesOfMovie(int name, int grade)
+        {
+            List<Review> x1 = new List<Review>();
+            int numberOfGrades = 0;
+
+            x1.ForEach(delegate (Review review)
+            {
+                if (review.Movie == name)
+                {
+                    if (review.Grade == grade)
+                    {
+                        numberOfGrades++;
+                    }
+                }
+            });
+
+            return numberOfGrades;
+        }
+
+
     }
 }
