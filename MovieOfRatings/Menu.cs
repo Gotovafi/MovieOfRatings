@@ -11,7 +11,8 @@ namespace MovieOfRatings
 
         public int FindNrReviewsByReviewer(int name)
         {
-            List<Review> x1 = new List<Review>();
+            const string V = @"D:\Ratings\ratings.json";
+            List<Review> x1 = Program.GetReviewsFromFile(V);
             int numberOfReviews = 0;
 
             x1.ForEach(delegate (Review review)
@@ -115,7 +116,6 @@ namespace MovieOfRatings
                     }
                 }
             });
-
             return numberOfGrades;
         }
 

@@ -7,11 +7,19 @@ namespace MovieOfRatings.Tests
     {
         Menu menu = new Menu();
         [TestMethod()]
-        public void FindAveScoreByReviewerTest()
+        public void FindNrReviewsByReviewerTest()
         {
-            int name = 564;
+            int name = 1;
+
+            Assert.AreEqual(547, menu.FindNrReviewsByReviewer(name));
+        }
+
+        [TestMethod()]
+        public void FindAveGradeByReviewerTest()
+        {
+            int name = 1;
             
-            Assert.AreEqual(2, menu.FindAveScoreByReviewer(name));
+            Assert.AreEqual(547, menu.FindAveGradeByReviewer(name));
         }
     }
 }
