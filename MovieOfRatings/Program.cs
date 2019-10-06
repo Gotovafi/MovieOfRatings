@@ -11,13 +11,13 @@ namespace MovieOfRatings
     public class Program
     {
         private static List<Review> _ratingCollection;
-        private static string _path = @"D:\Ratings\ratings.json";
+        private static string _path = @"C:\Users\Kristian Bertelsen\Desktop\Stuff\ratings.json";
 
         static void Main(string[] args)
         {
                     
         }
-        public List<Review> GetReviewsFromFile(string _path)
+        public static List<Review> GetReviewsFromFile()
         {
             using (StreamReader streamReader = File.OpenText(_path))
             using (JsonTextReader reader = new JsonTextReader(streamReader))
@@ -37,14 +37,14 @@ namespace MovieOfRatings
                 }
                 return ratingList;
             }
-            using (StreamReader sr = File.OpenText(_path))
-            {
-                string s = "";
-                while ((s = sr.ReadLine()) != null)
-                {
-                    Console.WriteLine(s);
-                }
-            }
+            //using (StreamReader sr = File.OpenText(_path))
+            //{
+            //    string s = "";
+            //    while ((s = sr.ReadLine()) != null)
+            //    {
+            //        Console.WriteLine(s);
+            //    }
+            //}
         }
 
         public static List<Review> getListFromJSON()

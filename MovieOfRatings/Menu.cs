@@ -11,8 +11,7 @@ namespace MovieOfRatings
 
         public int FindNrReviewsByReviewer(int name)
         {
-            const string V = @"D:\Ratings\ratings.json";
-            List<Review> x1 = Program.GetReviewsFromFile(V);
+            List<Review> x1 = Program.GetReviewsFromFile();
             int numberOfReviews = 0;
 
             x1.ForEach(delegate (Review review)
@@ -28,7 +27,7 @@ namespace MovieOfRatings
 
         public double FindAveGradeByReviewer(int name)
         {
-            List<Review> x1 = new List<Review>();
+            List<Review> x1 = Program.GetReviewsFromFile();
             int numberOfGrade = 0;
             int totalGrade = 0;
             double aveGrade;
@@ -48,7 +47,7 @@ namespace MovieOfRatings
 
         public int FindNrGradesByReviewer(int name, int grade)
         {
-            List<Review> x1 = new List<Review>();
+            List<Review> x1 = Program.GetReviewsFromFile();
             int numberOfGrades = 0;
 
             x1.ForEach(delegate (Review review)
@@ -67,7 +66,7 @@ namespace MovieOfRatings
 
         public int FindNrReviewsOfMovie(int name)
         {
-            List<Review> x1 = new List<Review>();
+            List<Review> x1 = Program.GetReviewsFromFile();
             int numberOfReviews = 0;
 
             x1.ForEach(delegate (Review review)
@@ -83,7 +82,7 @@ namespace MovieOfRatings
 
         public double FindAveGradeOfMovie(int name)
         {
-            List<Review> x1 = new List<Review>();
+            List<Review> x1 = Program.GetReviewsFromFile();
             int numberOfGrade = 0;
             int totalGrade = 0;
             double aveGrade;
@@ -103,7 +102,7 @@ namespace MovieOfRatings
 
         public int FindNrGradesOfMovie(int name, int grade)
         {
-            List<Review> x1 = new List<Review>();
+            List<Review> x1 = Program.GetReviewsFromFile();
             int numberOfGrades = 0;
 
             x1.ForEach(delegate (Review review)
