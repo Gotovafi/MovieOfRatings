@@ -56,5 +56,6 @@ namespace MovieOfRatings.Tests
             Assert.AreEqual(2, menu.FindNrGradesOfMovie(name, grade));
         }
 
+
     }
 }
